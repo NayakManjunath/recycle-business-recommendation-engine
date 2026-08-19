@@ -1,0 +1,38 @@
+{
+  "material_byproduct": {
+    "description": "Industrial material byproduct output available for potential reuse, recycling, or remanufacturing.",
+    "required_fields": {
+      "material_id": "string",
+      "material_name": "string",
+      "quantity": "number",
+      "unit": "string"
+    }
+  },
+  "waste_stream": {
+    "description": "Industrial waste stream associated with a material byproduct.",
+    "required_fields": {
+      "waste_stream_id": "string",
+      "material_id": "string",
+      "waste_type": "string",
+      "quantity": "number",
+      "unit": "string"
+    }
+  },
+  "recycling_process": {
+    "description": "Specification of a recycling, reuse, or remanufacturing process that can potentially consume a material.",
+    "required_fields": {
+      "process_id": "string",
+      "process_name": "string",
+      "target_material": "string"
+    }
+  },
+  "secondary_market_demand": {
+    "description": "Demand for secondary materials from potential manufacturing use cases.",
+    "required_fields": {
+      "demand_id": "string",
+      "material_name": "string",
+      "required_quantity": "number",
+      "unit": "string"
+    }
+  }
+}
