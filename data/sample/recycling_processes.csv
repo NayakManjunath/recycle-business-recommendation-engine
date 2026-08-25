@@ -1,0 +1,4 @@
+process_id,process_name,target_material
+PROC-001,Steel Scrap Recycling,Steel Scrap
+PROC-002,Aluminum Scrap Recycling,Aluminum Scrap
+PROC-003,Plastic Reprocessing,Plastic Waste

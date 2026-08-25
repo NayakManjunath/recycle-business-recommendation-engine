@@ -1,0 +1,4 @@
+demand_id,material_name,required_quantity,unit
+DEM-001,Steel Scrap,800,kg
+DEM-002,Aluminum Scrap,400,kg
+DEM-003,Plastic Waste,600,kg
