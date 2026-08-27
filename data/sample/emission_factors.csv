@@ -1,0 +1,4 @@
+material_name,emission_factor,unit
+Steel Scrap,1.8,kg_co2e_per_kg
+Aluminum Scrap,8.0,kg_co2e_per_kg
+Plastic Waste,2.5,kg_co2e_per_kg
