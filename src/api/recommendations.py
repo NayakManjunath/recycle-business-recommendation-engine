@@ -8,6 +8,7 @@ Extends the recommendation API with environmental impact metrics.
 
 from __future__ import annotations
 
+from src.api.schemas import RecommendationResponse
 from typing import Any
 
 from fastapi import FastAPI
@@ -187,13 +188,15 @@ def health() -> dict[str, str]:
     }
 
 
-@app.get("/recommendations")
+@app.get(
+    "/recommendations",
+    response_model=RecommendationResponse,
+)
 def recommendations_endpoint() -> dict[str, Any]:
     """Return compatibility recommendations."""
     return get_recommendations()
 
 
-@app.get("/environmental-impact")
 def environmental_impact_endpoint() -> dict[str, Any]:
     """Return recommendations with environmental impact metrics."""
     return get_environmental_impact()
