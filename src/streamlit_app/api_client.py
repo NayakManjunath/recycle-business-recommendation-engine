@@ -1,7 +1,7 @@
-﻿"""
+"""
 FastAPI client for the Streamlit portal.
 
-Module 7.2
+Module 7.3
 ----------
 Provides centralized communication between the Streamlit
 presentation layer and the FastAPI backend.
@@ -93,3 +93,11 @@ class APIClient:
             "/materials/search",
             params=params or None,
         )
+
+    def get_recommendations(self) -> dict[str, Any]:
+        """
+        Return compatibility recommendations from the FastAPI backend.
+
+        Recommendation ranking and scoring remain owned by the backend.
+        """
+        return self._get("/recommendations")

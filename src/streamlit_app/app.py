@@ -9,6 +9,10 @@ delegating business logic to the FastAPI backend.
 
 from __future__ import annotations
 
+from src.streamlit_app.components.recommendations import (
+    render_recommendations,
+)
+
 import streamlit as st
 
 from src.streamlit_app.api_client import (
@@ -63,6 +67,10 @@ def main() -> None:
     st.divider()
 
     render_material_search(client)
+
+    st.divider()
+
+    render_recommendations(client)
 
     render_footer()
 
