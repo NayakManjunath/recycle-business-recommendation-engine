@@ -1,10 +1,10 @@
 """
 Streamlit application entry point.
 
-Module 7.2
-----------
-Provides the user-facing material search portal while
-delegating business logic to the FastAPI backend.
+Module 7
+--------
+Provides the user-facing Streamlit portal while delegating
+business logic to the FastAPI backend.
 """
 
 from __future__ import annotations
@@ -35,7 +35,7 @@ from src.streamlit_app.config import get_api_base_url
 
 st.set_page_config(
     page_title="Recycle Business Recommendation Engine",
-    page_icon="??",
+    page_icon="♻️",
     layout="wide",
     initial_sidebar_state="expanded",
 )
