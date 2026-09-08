@@ -1,4 +1,4 @@
-﻿"""
+"""
 Streamlit application entry point.
 
 Module 7.2
@@ -27,12 +27,15 @@ from src.streamlit_app.components.common import (
 from src.streamlit_app.components.material_search import (
     render_material_search,
 )
+from src.streamlit_app.components.environmental_savings import (
+    render_environmental_savings,
+)
 from src.streamlit_app.config import get_api_base_url
 
 
 st.set_page_config(
     page_title="Recycle Business Recommendation Engine",
-    page_icon="♻️",
+    page_icon="??",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -71,6 +74,10 @@ def main() -> None:
     st.divider()
 
     render_recommendations(client)
+
+    st.divider()
+
+    render_environmental_savings(client)
 
     render_footer()
 

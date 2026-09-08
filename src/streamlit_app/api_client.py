@@ -101,3 +101,12 @@ class APIClient:
         Recommendation ranking and scoring remain owned by the backend.
         """
         return self._get("/recommendations")
+
+    def get_environmental_impact(self) -> dict[str, Any]:
+        """
+        Return environmental impact metrics from the FastAPI backend.
+
+        Environmental calculations remain owned by the backend
+        environmental savings engine.
+        """
+        return self._get("/environmental-impact")
