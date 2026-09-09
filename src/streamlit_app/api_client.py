@@ -104,7 +104,8 @@ class APIClient:
 
     def get_environmental_impact(self) -> dict[str, Any]:
         """
-        Return environmental impact metrics from the FastAPI backend.
+        Return environmental savings recommendations and summary
+        from the FastAPI backend.
 
         Environmental calculations remain owned by the backend
         environmental savings engine.
