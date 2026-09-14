@@ -1,4 +1,4 @@
-﻿"""
+﻿""" 
 Validate Module 7.1 Streamlit Portal Foundation.
 
 Checks:
