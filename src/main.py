@@ -9,7 +9,7 @@ All production API routes are registered here so that this module
 remains the single application entry point for the API.
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 from src.api.materials import router as materials_router
 from src.api.recommendations import (
@@ -19,6 +19,13 @@ from src.api.recommendations import (
 from src.api.schemas import (
     EnvironmentalSavingsResponse,
     RecommendationResponse,
+)
+from fastapi.exceptions import RequestValidationError
+
+from src.api.error_handlers import (
+    http_exception_handler,
+    unexpected_exception_handler,
+    validation_exception_handler,
 )
 
 
@@ -34,7 +41,24 @@ app = FastAPI(
     ),
     version="1.0.0",
 )
+# ---------------------------------------------------------------------------
+# Centralized error handling
+# ---------------------------------------------------------------------------
 
+app.add_exception_handler(
+    RequestValidationError,
+    validation_exception_handler,
+)
+
+app.add_exception_handler(
+    HTTPException,
+    http_exception_handler,
+)
+
+app.add_exception_handler(
+    Exception,
+    unexpected_exception_handler,
+)
 
 # ---------------------------------------------------------------------------
 # System endpoints
